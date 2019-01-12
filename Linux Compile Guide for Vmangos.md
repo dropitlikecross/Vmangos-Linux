@@ -189,7 +189,10 @@ Press ctrl + b then press o to switch to the other half of the screen
 In the mangosd window you can enter the following commands.
 
 account create [username] [password]    //Create user
+
 account set addon [username] [0 to 3]   //Set the WOW environment, default is 0
+
 account set gmlevel [username] [0 to 3]  //User level 0 = player 1 and 2 = GM 3 = administrator
+
 server shutdown [delay]                  //how many seconds to shut down the server
 
