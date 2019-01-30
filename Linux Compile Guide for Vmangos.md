@@ -21,10 +21,10 @@
     wget http://download.dre.vanderbilt.edu/previous_versions/ACE-6.5.0.tar.gz
     tar -zxvf ACE-6.5.0.tar.gz
     
-After decompression, there will be an ACE folder and ACE_wrappers in the root directory.
+After decompression, there will be an ACE folder called ACE_wrappers in the downloaded directory.
 Set the variables
 
-    export ACE_ROOT=/root/ACE_wrappers 
+    export ACE_ROOT=/home/ACE_wrappers
     export LD_LIBRARY_PATH=$ACE_ROOT/lib:$LD_LIBRARY_PATH
 Edit the settings file
 
@@ -35,10 +35,10 @@ Add:
     #include "ace/config-linux.h
 Create a new file:
 
-    $ACE_ROOT/include/makeinclude/platform_macros.GNU
+    nano $ACE_ROOT/include/makeinclude/platform_macros.GNU
 Add:
 
-    include $(ACE_ROOT)/include/makeinclude/platform_linux.GNU 
+    include $(ACE_ROOT)/include/makeinclude/platform_linux.GNU
     INSTALL_PREFIX = /usr/local
 
 Compile ACE:
