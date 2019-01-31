@@ -36,7 +36,7 @@ Edit the settings file
 
 Add:
 
-    #include "ace/config-linux.h
+    #include "ace/config-linux.h"
 Create a new file:
 
     nano $ACE_ROOT/include/makeinclude/platform_macros.GNU
@@ -47,7 +47,7 @@ Add:
 
 Compile ACE:
 
-    cd /root/ACE_wrappers 
+    cd /root/ACE_wrappers
     make && make install
 
 ## Download VMangos and the Database
