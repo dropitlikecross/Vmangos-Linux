@@ -11,6 +11,10 @@
  6. Run the server
 
 ## Install compilers and software environments
+Change to Root user
+
+    sudo -i
+    cd ~
 
     sudo apt-get install build-essential gcc g++ automake git-core git autoconf make patch libmysql++-dev libtool libssl-dev grep binutils zlibc libc6 libbz2-dev cmake subversion libboost-all-dev wget tmux
 
