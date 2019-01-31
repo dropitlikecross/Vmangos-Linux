@@ -28,7 +28,7 @@ Change to Root user
 After decompression, there will be an ACE folder called ACE_wrappers in the downloaded directory.
 Set the variables
 
-    export ACE_ROOT=/home/ACE_wrappers
+    export ACE_ROOT=/root/ACE_wrappers
     export LD_LIBRARY_PATH=$ACE_ROOT/lib:$LD_LIBRARY_PATH
 Edit the settings file
 
