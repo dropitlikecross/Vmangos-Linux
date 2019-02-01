@@ -16,7 +16,7 @@ Change to Root user
     sudo -i
     cd ~
 
-    sudo apt-get install build-essential gcc g++ automake git-core git autoconf make patch libmysql++-dev libtool libssl-dev grep binutils zlibc libc6 libbz2-dev cmake subversion libboost-all-dev wget tmux
+    sudo apt-get install build-essential gcc g++ automake git-core git autoconf make patch libmysql++-dev libtool libssl-dev grep binutils zlibc libc6 libbz2-dev cmake subversion libboost-all-dev wget tmux p7zip-full
 
 
 
@@ -101,18 +101,23 @@ Create a new user and authorize them. **I strongly recommend changing the name f
 
 **SQL Migration**
 
-Pay attention to the version of the database. It **is very important to** check the first date of the database patch **! ! If the database version is wrong, you will experience problems. You have to start from the earliest date**
+Check the major database version that is in the database folder. 
+    cd database/
+    ls -h
+
+You must apply any updates since the last major database release. These updates are referred to as migrations. You will find them in sql\migrations inside the repository. For your convenience, there is a batch script that can be used to merge all migrations into a single file for each database.
 
     cd /root/core/sql/migrations
-    ls
+    ls -h
 
 ![enter image description here](https://fx.fklds.com/wp-content/uploads/2018/12/1a3bfe50621c5c.jpg)
+
 In this example June 8th is the earliest version so we begin from there.
 
-**Uncompress the file**
+**Uncompress the major database file**
 
     cd database/
-    tar -zxvf world_full_08_june_2018.7z
+    7z e world_full_08_june_2018.7z
 
 **Import the data**
 
@@ -123,7 +128,7 @@ In this example June 8th is the earliest version so we begin from there.
     mysql -u mangos -p mangos < /root/database/world_full_08_june_2018.sql
 
 
-**Update the base database files:**
+**Update the base database with migrations:**
 
     cd core/sql/migrations/
     chmod +x merge.sh
