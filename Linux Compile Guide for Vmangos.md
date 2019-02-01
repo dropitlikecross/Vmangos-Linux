@@ -164,7 +164,7 @@ You need to change the following values
 
     mysql -u root -p
     
-    use classicrealmd;
+    use realmd;
     DELETE FROM realmlist WHERE id=1;
     INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel)
     VALUES ('1', 'Servername', 'Server IP Address', '8085', '1', '0', '1', '0');
